@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useReducer } from "react";
-import { initialValue, Reducer } from "./Reducer";
+import { startingValue, Reducer } from "./Reducer";
 
 const LikeCounter = () => {
 
-  const [state, dispatch] = useReducer(Reducer, initialValue);
+  const [state, dispatch] = useReducer(Reducer, startingValue);
   const handleIncrement = () => 
   {
     dispatch({ type: "INCREMENT" });
@@ -17,8 +17,8 @@ const LikeCounter = () => {
   return (
     <> 
       <h1 className="heading-text">{state.count}</h1> 
-      <button className="button-like" onClick={handleIncrement} style={{backgroundColor:"lightgreen"}}>Like</button>
-      <button className="button-unlike" onClick={handleDecrement} style={{backgroundColor:"red"}}>Unlike</button> 
+      <button className="button-like" onClick={handleIncrement} }>Like</button>
+      <button className="button-unlike" onClick={handleDecrement} }>Unlike</button> 
     </>
   );
 };
