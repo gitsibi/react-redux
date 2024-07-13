@@ -1,16 +1,16 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import LikeCounter from './components/LikeCounter'
+import { reducer } from './components/Reducer';
 
-function App() {
-  const [count, setCount] = useState(0)
+const store = createStore(reducer);
 
-  return (
-    <>
-      <LikeCounter/>
-    </>
-  )
-}
+const App = () => (
+  <Provider store={store}>
+    <LikeCounter />
+  </Provider>
+);
 
-export default App
+export default App;
